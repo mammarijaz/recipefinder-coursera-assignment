@@ -1,0 +1,17 @@
+<h1>Searching for - <%= @search %></h1>
+
+<table border="1">
+  <tr>
+  	<th>thumbnail</th>
+  	<th>title</th>
+  	<th>social rank</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to image_tag(recipe["image_url"], size: "100x100"), recipe["source_url"] %></td>
+      <% title=raw recipe["title"] %>
+      <td><%= link_to title,recipe["source_url"] %></td>
+      <td><%= recipe["social_rank"] %></td>
+    </tr>
+  <% end %>
+</table>
